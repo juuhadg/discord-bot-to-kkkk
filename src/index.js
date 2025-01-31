@@ -1,4 +1,3 @@
-import { AudioPlayerStatus, createAudioPlayer, createAudioResource, joinVoiceChannel } from '@discordjs/voice';
 import { Client, GatewayIntentBits } from 'discord.js';
 import dotenv from 'dotenv';
 import fs from 'fs';
@@ -6,7 +5,6 @@ import path from 'path';
 import puppeteer from 'puppeteer';
 import puppeteerExtra from 'puppeteer-extra';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
-import ytdl from 'youtube-dl-exec';
 import { stealthBrowser } from './browser.js';
 dotenv.config();
 puppeteerExtra.use(StealthPlugin());
@@ -233,7 +231,7 @@ client.on('messageCreate', async (message) => {
             message.reply('Ocorreu um erro ao buscar as estatísticas.');
         }
     }
-    else if (command === 'tocar') {
+    /* else if (command === 'tocar') {
         const link = args[0];
         const channel = message.member.voice.channel;
     
@@ -288,12 +286,12 @@ client.on('messageCreate', async (message) => {
     }
     else {
         message.reply('Comando não reconhecido!');
-    }
+    }*/
 })
 
 
 
-async function downloadAndConvertToMP3(url, outputDir) {
+/*async function downloadAndConvertToMP3(url, outputDir) {
     try {
         // Definir o nome do arquivo de saída
         const fileName = path.join(outputDir, 'audio.mp3');
@@ -315,4 +313,4 @@ async function downloadAndConvertToMP3(url, outputDir) {
     } catch (error) {
         console.error('Erro ao baixar e converter o áudio:', error);
     }
-}
+} */
